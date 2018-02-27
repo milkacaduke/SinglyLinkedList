@@ -36,18 +36,18 @@ class LinkedList(object):
 		curNode.next = LLNode(data)
 
 
-	def insert_after_node(self, prevNode, data):
+	def insert_after_node(self, targetNode, data):
 		if self.head is None:
 			print("Linked List empty")
 			return
 
-		if prevNode is None:
-			print("prevNode provide is None")
+		if targetNode is None:
+			print("targetNode provide is None")
 			return
 
 		newNode = LLNode(data)
-		newNode.next = prevNode.next
-		prevNode.next = newNode
+		newNode.next = targetNode.next
+		targetNode.next = newNode
 
 
 	def insert_after_data(self, prevNodeData, data):
