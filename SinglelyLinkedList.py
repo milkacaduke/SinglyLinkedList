@@ -71,13 +71,11 @@ class LinkedList(object):
 
 		curNode = self.head
 
-		# print head arrow
+		# print head arrow, style stuff not important
 		print("")
 		print("[head]")
 		print("   v")
 		print("   ", end="")
-
-
 		while curNode:
 			if curNode.next is None:
 				print(curNode.data)
@@ -87,25 +85,18 @@ class LinkedList(object):
 			curNode = curNode.next
 
 
+# # main
+# ll = LinkedList()
 
+# ll.insert('A')
+# ll.insert('B')
+# ll.insert('C')
+# ll.insert('D')
+# ll.insert('E')
+# ll.insert_tail('F')
+# # print(ll.head.data)
 
-
-
-
-
-
-# main
-ll = LinkedList()
-
-ll.insert('A')
-ll.insert('B')
-ll.insert('C')
-ll.insert('D')
-ll.insert('E')
-ll.insert_tail('F')
-# print(ll.head.data)
-
-ll.printAll()
-print("length: {}".format(ll.length()))
-ll.delete_tail()
-ll.printAll()
+# ll.printAll()
+# print("length: {}".format(ll.length()))
+# ll.delete_tail()
+# ll.printAll()
