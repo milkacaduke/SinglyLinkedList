@@ -8,17 +8,20 @@ class LinkedList(object):
 	def __init__(self):
 		self.head = None
 
+
 	def insert(self, data):
 		if data is not None:
 			self.insert_head(data)
 
+
 	def insert_head(self, data):
 		if self.head:
-			new_node = LLNode(data)
-			new_node.next = self.head
-			self.head = new_node
+			newNode = LLNode(data)
+			newNode.next = self.head
+			self.head = newNode
 		else:
 			self.head = LLNode(data)
+
 
 	def insert_tail(self, data):
 		if self.head is None:
@@ -31,6 +34,40 @@ class LinkedList(object):
 
 		curNode.next = LLNode(data)
 
+
+	def insert_after_node(self, prevNode, data):
+		if self.head is None:
+			print("Linked List empty")
+			return
+
+		if prevNode is None:
+			print("prevNode provide is None")
+			return
+
+		newNode = LLNode(data)
+		newNode.next = prevNode.next
+		prevNode.next = newNode
+
+
+	def insert_after_data(self, prevNodeData, data):
+		if prevNodeData is None:
+			print("prevNode data provided is None")
+			return
+
+		if self.head is None:
+			print("Linked List empty")
+			return
+
+		curNode = self.head
+		while curNode:
+			curData = curNode.data
+			if curData == prevNodeData:
+				return self.insert_after_node(curNode, data)
+			curNode = curNode.next
+
+		print("No node with {} in Linked List".format(prevNodeData))
+
+
 	def delete_head(self):
 		if self.head is None:
 			print("Linked List empty, cannot preform delete")
@@ -39,6 +76,7 @@ class LinkedList(object):
 		temp = self.head
 		self.head = self.head.next
 		return temp
+
 
 	def delete_tail(self):
 		if self.head is None:
@@ -54,6 +92,7 @@ class LinkedList(object):
 		prevNode.next = None
 		return curNode
 
+
 	def length(self):
 		if self.head is None:
 			return 0
@@ -64,6 +103,7 @@ class LinkedList(object):
 			count += 1
 			cur = cur.next
 		return count
+
 
 	def printAll(self):
 		if self.head is None:
@@ -86,17 +126,22 @@ class LinkedList(object):
 
 
 # # main
-# ll = LinkedList()
+ll = LinkedList()
 
-# ll.insert('A')
-# ll.insert('B')
-# ll.insert('C')
-# ll.insert('D')
-# ll.insert('E')
+ll.insert('A')
+ll.insert('B')
+ll.insert('C')
+ll.insert('D')
+ll.insert('E')
 # ll.insert_tail('F')
 # # print(ll.head.data)
 
-# ll.printAll()
+ll.printAll()
+
+ll.insert_after_data('E', 'E1')
+ll.insert_after_data('C', 'C1')
+ll.insert_after_data('B', 'B1')
+ll.printAll()
 # print("length: {}".format(ll.length()))
 # ll.delete_tail()
 # ll.printAll()
