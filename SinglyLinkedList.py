@@ -170,18 +170,14 @@ class LinkedList(object):
 
 
 # # main
-ll = LinkedList()
+# ll = LinkedList()
 
-ll.insert('A')
-ll.insert('B')
+# ll.insert('A')
+# ll.insert('B')
 # ll.insert('C')
 # ll.insert('D')
 # ll.insert('E')
 # # print(ll.head.data)
-
-ll.printAll()
-
-ll.printAll()
 
 
 # ll.insert_after_data('E', 'E1')
